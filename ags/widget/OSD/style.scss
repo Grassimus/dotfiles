@@ -1,0 +1,23 @@
+@use "sass:color";
+@use '../../style/base' as *;
+
+window#state-display {
+  background-color: transparent;
+}
+
+window#state-display box.state-display {
+  @extend .floating;
+  padding: calc(var(--padding) * 2.25);
+
+  image {
+    padding: var(--popover-padding);
+    color: color-mix(in srgb, var(--fg) 90%, transparent);
+  }
+
+  progressbar.percentage {
+    &.muted trough progress {
+      background-image: none;
+      background-color: color-mix(in srgb, var(--fg) 80%, transparent);
+    }
+  }
+}

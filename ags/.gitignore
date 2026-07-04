@@ -1,0 +1,7 @@
+@girs/
+node_modules/
+result
+.ags-build.scss
+.sass-cache/
+style/widgets.scss
+style/compile/.scss-hash

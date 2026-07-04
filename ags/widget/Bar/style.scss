@@ -1,0 +1,163 @@
+@use 'sass:color';
+@use '../../style/base' as *;
+
+window#bar {
+  transition: var(--transition);
+  background-color: var(--bg);
+  padding: calc(var(--padding) * 0.3);
+  >box {
+    margin: 0 calc(var(--spacing) / 2);
+  }
+  .horizontal {
+    @include spacing;
+  }
+
+  button {
+    @extend .flat-button;
+    padding: calc(var(--padding) / 2);
+  }
+
+  menubutton {
+    all: unset;
+  }
+
+  popover contents {
+    box-shadow: 0 0 5px 0 var(--shadow-color);
+    margin: max(var(--spacing), 8px);
+    border: var(--border-width) solid var(--popover-border-color);
+    background-color: var(--bg);
+    color: var(--fg);
+    border-radius: calc(var(--popover-radius) / 2);
+    padding: calc(var(--padding) / 2);
+
+    modelbutton {
+      @extend .flat-button;
+      padding: calc(var(--padding) * 0.8);
+      font-weight: normal;
+    }
+  }
+
+  box.launcher {
+    @include spacing;
+
+    .colored {
+      color: color-mix(in srgb, var(--primary-bg) 80%, transparent);
+    }
+
+    button:hover .colored {
+      color: var(--primary-bg);
+    }
+
+    button:active .colored,
+    button.active .colored {
+      color: var(--primary-fg);
+    }
+  }
+
+  button.workspaces {
+    box {
+      @include spacing;
+    }
+
+    label {
+      font-size: 0;
+      min-width: 5pt;
+      min-height: 5pt;
+      border-radius: calc(var(--radius) * 0.6);
+      box-shadow: inset 0 0 2px var(--border-width) var(--border-color);
+      margin: 0 calc(var(--padding) / 2);
+      transition: calc(var(--transition) / 2);
+      background-color: color-mix(in srgb, var(--fg) 20%, transparent);
+
+      &.occupied {
+        background-color: color-mix(in srgb, var(--fg) 80%, transparent);
+        min-width: 7pt;
+        min-height: 7pt;
+      }
+
+      &.active {
+        background-image: var(--active-gradient);
+        min-width: 20pt;
+        min-height: 12pt;
+      }
+    }
+
+    &.active label,
+    &:active label {
+      background-color: color-mix(in srgb, var(--primary-fg) 70%, transparent);
+
+      &.occupied {
+        background-color: color-mix(in srgb, var(--primary-fg) 85%, transparent);
+      }
+
+      &.active {
+        background-color: var(--primary-fg);
+      }
+    }
+  }
+
+  box.tasks {
+    @include spacing;
+
+    overlay {
+      @extend .flat-button;
+      padding: calc(var(--padding) / 2);
+      border-radius: calc(var(--radius) * 1.5);
+    }
+
+    box.focused {
+      padding: 1.25pt;
+      margin: 15pt 0;
+      border-radius: var(--radius);
+      background-color: var(--primary-bg);
+    }
+  }
+
+  button.quicksettings box,
+  box.quicksettings box {
+    @include spacing(1.5);
+  }
+
+  button.media box {
+    @include spacing(0.75);
+  }
+
+  button.quicksettings:not(.active):not(:active) .bluetooth-connected {
+    color: var(--primary-bg);
+  }
+}
+
+window#bar.transparent {
+  background-color: transparent;
+
+  button:not(.active) {
+    label,
+    image,
+    text {
+      -gtk-icon-shadow: 0 1px 2px var(--shadow-color);
+      text-shadow: 0 1px 2px var(--shadow-color);
+    }
+  }
+
+  box.tasks overlay:not(.active) {
+    label,
+    image,
+    text {
+      -gtk-icon-shadow: 0 1px 2px var(--shadow-color);
+      text-shadow: 0 1px 2px var(--shadow-color);
+    }
+  }
+
+  button.overview:not(.active) {
+    label,
+    image,
+    text {
+      -gtk-icon-shadow: 0 1px 2px var(--shadow-color);
+      text-shadow: 0 1px 2px var(--shadow-color);
+    }
+  }
+
+  button.workspaces label {
+    filter: drop-shadow(0 1px 2px var(--shadow-color));
+  }
+}

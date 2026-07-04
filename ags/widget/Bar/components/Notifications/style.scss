@@ -1,0 +1,88 @@
+@use "sass:color";
+@use '../../../../style/base' as *;
+
+.notification {
+  &.critical {
+    box-shadow: inset 0 0 0.5em 0 var(--error-bg);
+  }
+
+  box.header {
+    margin-bottom: calc(var(--spacing) / 2);
+
+    label.time {
+      color: color-mix(in srgb, var(--fg) 80%, transparent);
+    }
+
+    image.app-icon {
+      border-radius: calc(var(--radius) * 0.8);
+      margin-right: calc(var(--spacing) / 2);
+      min-height: 1.5em;
+      min-width: 1.5em;
+
+      &.icon {
+        border: var(--border);
+      }
+    }
+
+    label.app-name {
+      margin-right: var(--spacing);
+      letter-spacing: -0.50pt;
+      font-size: 0.9em;
+      color: var(--fg);
+    }
+  }
+
+  box.content {
+    label.summary {
+      margin-right: var(--spacing);
+      color: var(--fg);
+      font-weight: bold;
+    }
+
+    label.body {
+      color: color-mix(in srgb, var(--fg) 80%, transparent);
+    }
+
+    image.icon,
+    picture.icon {
+      border-radius: calc(var(--radius) * 0.8);
+      margin-right: var(--spacing);
+      min-height: 1.5em;
+      min-width: 1.5em;
+
+      &.icon {
+        border: var(--border);
+      }
+    }
+  }
+
+  box.actions {
+    @include spacing(0.8);
+    margin-top: var(--spacing);
+
+    button {
+      border-radius: calc(var(--radius) * 0.8);
+      font-size: 1.2em;
+      padding: calc(var(--padding) * 0.7);
+    }
+  }
+
+  button.close-button {
+    padding: calc(var(--padding) * 0.3) calc(var(--padding) * 0.3);
+    margin-left: calc(var(--spacing) / 2);
+  }
+}
+
+window.notifications {
+  all: unset;
+
+  box.notification {
+    @extend .floating;
+    border-radius: var(--radius);
+    margin-bottom: 0;
+
+    box.description {
+      min-width: 350px;
+    }
+  }
+}
