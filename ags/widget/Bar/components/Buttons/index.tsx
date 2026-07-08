@@ -289,22 +289,15 @@ export function ColorPicker() {
 		<PanelButton
 			tooltipText={createBinding(cpick, "colors").as(v =>
 				`${v.length} color${v.length === 1 ? "" : "s"}`)}
-
+			onClicked={() => cpick.pick()}
 			$={self => {
 				popover.set_parent(self)
 			}}
 		>
 			<Gtk.GestureClick
-				button={0}
-				onEnd={self => {
-					const btn = self.get_current_button()
-					if (btn === Gdk.BUTTON_PRIMARY) {
-						cpick.pick()
-					}
-					else if (cpick.colors.length > 0 && btn === Gdk.BUTTON_SECONDARY) {
-						popover.popup()
-					}
-					self.reset()
+				button={Gdk.BUTTON_SECONDARY}
+				onPressed={() => {
+					if (cpick.colors.length > 0) popover.popup()
 				}}
 			/>
 			<image iconName={icons.ui.colorpicker} useFallback />
