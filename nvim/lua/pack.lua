@@ -55,6 +55,12 @@ vim.api.nvim_create_autocmd('PackChanged', {
       vim.cmd 'TSUpdate'
       return
     end
+
+    if name == 'markdown-preview.nvim' then
+      if not ev.data.active then vim.cmd.packadd 'markdown-preview.nvim' end
+      vim.fn['mkdp#util#install']()
+      return
+    end
   end,
 })
 
