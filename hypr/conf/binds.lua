@@ -24,7 +24,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 hl.bind("XF86WLAN", hl.dsp.exec_cmd("nmcli radio wifi toggle"))
-hl.bind("XF86Refresh", hl.dsp.exec_cmd("xdotool key F5"))
+hl.bind("XF86Refresh", hl.dsp.exec_cmd("wtype -k F5"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
