@@ -1,4 +1,4 @@
-button, .flat-button, window.settings-dialog box.group .header button.reset, window.settings-dialog box.row button.reset, window#bar button, window#bar popover contents modelbutton, window#bar box.tasks overlay, window#launcher box.launcher box.quicklaunch button, window#quicksettings .quicksettings box.sliders-box box.volume button, window#quicksettings .quicksettings box.sliders-box box.control-unit button, window#quicksettings .quicksettings box.menu button, window#quicksettings .quicksettings box.media box.player button, window#datemenu box.datemenu box.calendar calendar button {
+button, .flat-button, window.settings-dialog box.group .header button.reset, window.settings-dialog box.row button.reset, window#bar button, window#bar popover contents modelbutton, window#bar box.tasks overlay, window#quicksettings .quicksettings box.sliders-box box.volume button, window#quicksettings .quicksettings box.sliders-box box.control-unit button, window#quicksettings .quicksettings box.menu button, window#quicksettings .quicksettings box.media box.player button, window#launcher box.launcher box.quicklaunch button, window#datemenu box.datemenu box.calendar calendar button {
   all: unset;
   transition: var(--transition);
   border-radius: var(--radius);
@@ -8,28 +8,28 @@ button, .flat-button, window.settings-dialog box.group .header button.reset, win
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color), var(--neu-button-highlight), var(--neu-button-shadow);
   font-weight: bold;
 }
-button:hover:not(.active), .flat-button:hover:not(.active), window.settings-dialog box.group .header button.reset:hover:not(.active), window.settings-dialog box.row button.reset:hover:not(.active), window#bar button:hover:not(.active), window#bar popover contents modelbutton:hover:not(.active), window#bar box.tasks overlay:hover:not(.active), window#launcher box.launcher box.quicklaunch button:hover:not(.active), window#quicksettings .quicksettings box.sliders-box box.volume button:hover:not(.active), window#quicksettings .quicksettings box.sliders-box box.control-unit button:hover:not(.active), window#quicksettings .quicksettings box.menu button:hover:not(.active), window#quicksettings .quicksettings box.media box.player button:hover:not(.active), window#datemenu box.datemenu box.calendar calendar button:hover:not(.active) {
+button:hover:not(.active), .flat-button:hover:not(.active), window.settings-dialog box.group .header button.reset:hover:not(.active), window.settings-dialog box.row button.reset:hover:not(.active), window#bar button:hover:not(.active), window#bar popover contents modelbutton:hover:not(.active), window#bar box.tasks overlay:hover:not(.active), window#quicksettings .quicksettings box.sliders-box box.volume button:hover:not(.active), window#quicksettings .quicksettings box.sliders-box box.control-unit button:hover:not(.active), window#quicksettings .quicksettings box.menu button:hover:not(.active), window#quicksettings .quicksettings box.media box.player button:hover:not(.active), window#launcher box.launcher box.quicklaunch button:hover:not(.active), window#datemenu box.datemenu box.calendar calendar button:hover:not(.active) {
   background-color: var(--hover-bg);
   color: var(--hover-fg);
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color), var(--neu-button-hover-highlight), var(--neu-button-hover-shadow);
 }
-button:focus-visible, .flat-button:focus-visible, window.settings-dialog box.group .header button.reset:focus-visible, window.settings-dialog box.row button.reset:focus-visible, window#bar button:focus-visible, window#bar popover contents modelbutton:focus-visible, window#bar box.tasks overlay:focus-visible, window#launcher box.launcher box.quicklaunch button:focus-visible, window#quicksettings .quicksettings box.sliders-box box.volume button:focus-visible, window#quicksettings .quicksettings box.sliders-box box.control-unit button:focus-visible, window#quicksettings .quicksettings box.menu button:focus-visible, window#quicksettings .quicksettings box.media box.player button:focus-visible, window#datemenu box.datemenu box.calendar calendar button:focus-visible {
+button:focus-visible, .flat-button:focus-visible, window.settings-dialog box.group .header button.reset:focus-visible, window.settings-dialog box.row button.reset:focus-visible, window#bar button:focus-visible, window#bar popover contents modelbutton:focus-visible, window#bar box.tasks overlay:focus-visible, window#quicksettings .quicksettings box.sliders-box box.volume button:focus-visible, window#quicksettings .quicksettings box.sliders-box box.control-unit button:focus-visible, window#quicksettings .quicksettings box.menu button:focus-visible, window#quicksettings .quicksettings box.media box.player button:focus-visible, window#launcher box.launcher box.quicklaunch button:focus-visible, window#datemenu box.datemenu box.calendar calendar button:focus-visible {
   outline: calc(var(--border-width) / 2) solid var(--primary-bg);
   outline-offset: -1px;
 }
-button:active, .flat-button:active, window.settings-dialog box.group .header button.reset:active, window.settings-dialog box.row button.reset:active, window#bar button:active, window#bar popover contents modelbutton:active, window#bar box.tasks overlay:active, window#launcher box.launcher box.quicklaunch button:active, window#quicksettings .quicksettings box.sliders-box box.volume button:active, window#quicksettings .quicksettings box.sliders-box box.control-unit button:active, window#quicksettings .quicksettings box.menu button:active, window#quicksettings .quicksettings box.media box.player button:active, window#datemenu box.datemenu box.calendar calendar button:active, button.on, .on.flat-button, window.settings-dialog box.group .header button.on.reset, window.settings-dialog box.row button.on.reset, window#bar button.on, window#bar popover contents modelbutton.on, window#bar box.tasks overlay.on, window#launcher box.launcher box.quicklaunch button.on, window#quicksettings .quicksettings box.sliders-box box.volume button.on, window#quicksettings .quicksettings box.sliders-box box.control-unit button.on, window#quicksettings .quicksettings box.menu button.on, window#quicksettings .quicksettings box.media box.player button.on, window#datemenu box.datemenu box.calendar calendar button.on, button.active, .active.flat-button, window.settings-dialog box.group .header button.active.reset, window.settings-dialog box.row button.active.reset, window#bar button.active, window#bar popover contents modelbutton.active, window#bar box.tasks overlay.active, window#launcher box.launcher box.quicklaunch button.active, window#quicksettings .quicksettings box.sliders-box box.volume button.active, window#quicksettings .quicksettings box.sliders-box box.control-unit button.active, window#quicksettings .quicksettings box.menu button.active, window#quicksettings .quicksettings box.media box.player button.active, window#datemenu box.datemenu box.calendar calendar button.active, button:checked, .flat-button:checked, window.settings-dialog box.group .header button.reset:checked, window.settings-dialog box.row button.reset:checked, window#bar button:checked, window#bar popover contents modelbutton:checked, window#bar box.tasks overlay:checked, window#launcher box.launcher box.quicklaunch button:checked, window#quicksettings .quicksettings box.sliders-box box.volume button:checked, window#quicksettings .quicksettings box.sliders-box box.control-unit button:checked, window#quicksettings .quicksettings box.menu button:checked, window#quicksettings .quicksettings box.media box.player button:checked, window#datemenu box.datemenu box.calendar calendar button:checked {
+button:active, .flat-button:active, window.settings-dialog box.group .header button.reset:active, window.settings-dialog box.row button.reset:active, window#bar button:active, window#bar popover contents modelbutton:active, window#bar box.tasks overlay:active, window#quicksettings .quicksettings box.sliders-box box.volume button:active, window#quicksettings .quicksettings box.sliders-box box.control-unit button:active, window#quicksettings .quicksettings box.menu button:active, window#quicksettings .quicksettings box.media box.player button:active, window#launcher box.launcher box.quicklaunch button:active, window#datemenu box.datemenu box.calendar calendar button:active, button.on, .on.flat-button, window.settings-dialog box.group .header button.on.reset, window.settings-dialog box.row button.on.reset, window#bar button.on, window#bar popover contents modelbutton.on, window#bar box.tasks overlay.on, window#quicksettings .quicksettings box.sliders-box box.volume button.on, window#quicksettings .quicksettings box.sliders-box box.control-unit button.on, window#quicksettings .quicksettings box.menu button.on, window#quicksettings .quicksettings box.media box.player button.on, window#launcher box.launcher box.quicklaunch button.on, window#datemenu box.datemenu box.calendar calendar button.on, button.active, .active.flat-button, window.settings-dialog box.group .header button.active.reset, window.settings-dialog box.row button.active.reset, window#bar button.active, window#bar popover contents modelbutton.active, window#bar box.tasks overlay.active, window#quicksettings .quicksettings box.sliders-box box.volume button.active, window#quicksettings .quicksettings box.sliders-box box.control-unit button.active, window#quicksettings .quicksettings box.menu button.active, window#quicksettings .quicksettings box.media box.player button.active, window#launcher box.launcher box.quicklaunch button.active, window#datemenu box.datemenu box.calendar calendar button.active, button:checked, .flat-button:checked, window.settings-dialog box.group .header button.reset:checked, window.settings-dialog box.row button.reset:checked, window#bar button:checked, window#bar popover contents modelbutton:checked, window#bar box.tasks overlay:checked, window#quicksettings .quicksettings box.sliders-box box.volume button:checked, window#quicksettings .quicksettings box.sliders-box box.control-unit button:checked, window#quicksettings .quicksettings box.menu button:checked, window#quicksettings .quicksettings box.media box.player button:checked, window#launcher box.launcher box.quicklaunch button:checked, window#datemenu box.datemenu box.calendar calendar button:checked {
   background-image: var(--active-gradient);
   background-color: var(--primary-bg);
   color: var(--primary-fg);
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color), var(--neu-button-active-highlight), var(--neu-button-active-shadow);
 }
-button:disabled, .flat-button:disabled, window.settings-dialog box.group .header button.reset:disabled, window.settings-dialog box.row button.reset:disabled, window#bar button:disabled, window#bar popover contents modelbutton:disabled, window#bar box.tasks overlay:disabled, window#launcher box.launcher box.quicklaunch button:disabled, window#quicksettings .quicksettings box.sliders-box box.volume button:disabled, window#quicksettings .quicksettings box.sliders-box box.control-unit button:disabled, window#quicksettings .quicksettings box.menu button:disabled, window#quicksettings .quicksettings box.media box.player button:disabled, window#datemenu box.datemenu box.calendar calendar button:disabled {
+button:disabled, .flat-button:disabled, window.settings-dialog box.group .header button.reset:disabled, window.settings-dialog box.row button.reset:disabled, window#bar button:disabled, window#bar popover contents modelbutton:disabled, window#bar box.tasks overlay:disabled, window#quicksettings .quicksettings box.sliders-box box.volume button:disabled, window#quicksettings .quicksettings box.sliders-box box.control-unit button:disabled, window#quicksettings .quicksettings box.menu button:disabled, window#quicksettings .quicksettings box.media box.player button:disabled, window#launcher box.launcher box.quicklaunch button:disabled, window#datemenu box.datemenu box.calendar calendar button:disabled {
   box-shadow: none;
   background-color: transparent;
   color: color-mix(in srgb, var(--fg) 30%, transparent);
 }
 
-.flat-button, window.settings-dialog box.group .header button.reset, window.settings-dialog box.row button.reset, window#bar button, window#bar popover contents modelbutton, window#bar box.tasks overlay, window#launcher box.launcher box.quicklaunch button, window#quicksettings .quicksettings box.sliders-box box.volume button, window#quicksettings .quicksettings box.sliders-box box.control-unit button, window#quicksettings .quicksettings box.menu button, window#quicksettings .quicksettings box.media box.player button, window#datemenu box.datemenu box.calendar calendar button {
+.flat-button, window.settings-dialog box.group .header button.reset, window.settings-dialog box.row button.reset, window#bar button, window#bar popover contents modelbutton, window#bar box.tasks overlay, window#quicksettings .quicksettings box.sliders-box box.volume button, window#quicksettings .quicksettings box.sliders-box box.control-unit button, window#quicksettings .quicksettings box.menu button, window#quicksettings .quicksettings box.media box.player button, window#launcher box.launcher box.quicklaunch button, window#datemenu box.datemenu box.calendar calendar button {
   background-color: transparent;
   box-shadow: none;
 }
@@ -86,7 +86,7 @@ tooltip label {
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color), var(--neu-widget-highlight), var(--neu-widget-shadow);
 }
 
-.floating, window#verification box.verification, window#powermenu box.powermenu, window#state-display box.state-display, window#launcher box.launcher, window#quicksettings .quicksettings, window#overview box.overview, window.notifications box.notification, window#datemenu box.datemenu, window#batterystate box.batterystate {
+.floating, window#verification box.verification, window#powermenu box.powermenu, window#state-display box.state-display, window#quicksettings .quicksettings, window#overview box.overview, window.notifications box.notification, window#launcher box.launcher, window#datemenu box.datemenu, window#batterystate box.batterystate {
   box-shadow: 0 0 5px 0 var(--shadow-color), var(--neu-widget-highlight), var(--neu-widget-shadow);
   margin: max(var(--spacing), 8px);
   border: var(--border-width) solid var(--popover-border-color);
@@ -619,6 +619,131 @@ window#datemenu box.datemenu box.calendar calendar label.day-name {
 }
 window#datemenu box.datemenu box.calendar calendar label.other-month {
   color: color-mix(in srgb, var(--fg) 10%, transparent);
+}
+
+window#launcher {
+  background-color: transparent;
+}
+window#launcher box.launcher box.quicklaunch.horizontal > * {
+  margin: 0 calc(var(--spacing) * 1 / 2);
+}
+window#launcher box.launcher box.quicklaunch.horizontal > *:first-child {
+  margin-left: 0;
+}
+window#launcher box.launcher box.quicklaunch.horizontal > *:last-child {
+  margin-right: 0;
+}
+window#launcher box.launcher box.quicklaunch.vertical > * {
+  margin: calc(var(--spacing) * 1 / 2) 0;
+}
+window#launcher box.launcher box.quicklaunch.vertical > *:first-child {
+  margin-top: 0;
+}
+window#launcher box.launcher box.quicklaunch.vertical > *:last-child {
+  margin-bottom: 0;
+}
+window#launcher box.launcher box.quicklaunch {
+  margin-top: var(--spacing);
+}
+window#launcher box.launcher box.quicklaunch button {
+  padding: calc(var(--padding) / 2);
+}
+window#launcher box.launcher box.quicklaunch button image {
+  transition: var(--transition);
+}
+window#launcher box.launcher box.quicklaunch button:hover, window#launcher box.launcher box.quicklaunch button:focus-visible {
+  outline: none;
+}
+window#launcher box.launcher box.quicklaunch button:hover image, window#launcher box.launcher box.quicklaunch button:focus-visible image {
+  -gtk-icon-shadow: 2px 2px var(--primary-bg);
+}
+window#launcher box.launcher entry {
+  margin: var(--spacing);
+}
+window#launcher box.launcher entry:focus-visible {
+  outline: none;
+}
+window#launcher box.launcher entry selection {
+  color: color-mix(in srgb, var(--fg) 50%, var(--bg));
+  background-color: transparent;
+}
+window#launcher box.launcher entry label,
+window#launcher box.launcher entry image {
+  color: var(--fg);
+}
+window#launcher box.launcher image.spinner {
+  color: var(--primary-bg);
+  margin-right: var(--spacing);
+}
+window#launcher box.launcher separator {
+  margin: 4pt 0;
+  background-color: var(--popover-border-color);
+}
+window#launcher box.launcher button.app-item {
+  padding: var(--padding);
+  transition: var(--transition);
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+window#launcher box.launcher button.app-item:focus-visible {
+  outline: none;
+}
+window#launcher box.launcher button.app-item > box.horizontal > * {
+  margin: 0 calc(var(--spacing) * 0.5 / 2);
+}
+window#launcher box.launcher button.app-item > box.horizontal > *:first-child {
+  margin-left: 0;
+}
+window#launcher box.launcher button.app-item > box.horizontal > *:last-child {
+  margin-right: 0;
+}
+window#launcher box.launcher button.app-item > box.vertical > * {
+  margin: calc(var(--spacing) * 0.5 / 2) 0;
+}
+window#launcher box.launcher button.app-item > box.vertical > *:first-child {
+  margin-top: 0;
+}
+window#launcher box.launcher button.app-item > box.vertical > *:last-child {
+  margin-bottom: 0;
+}
+window#launcher box.launcher button.app-item label {
+  transition: var(--transition);
+}
+window#launcher box.launcher button.app-item label.title {
+  color: var(--fg);
+}
+window#launcher box.launcher button.app-item label.description {
+  color: color-mix(in srgb, var(--fg) 70%, transparent);
+  font-weight: normal;
+}
+window#launcher box.launcher button.app-item.selected {
+  border-style: solid;
+  border-width: 0 0 0 5px;
+  border-color: var(--primary-bg);
+}
+window#launcher box.launcher button.app-item image {
+  transition: var(--transition);
+}
+window#launcher box.launcher button.app-item:hover label.title, window#launcher box.launcher button.app-item:focus label.title {
+  color: var(--primary-bg);
+}
+window#launcher box.launcher button.app-item:hover label.description, window#launcher box.launcher button.app-item:focus label.description {
+  color: color-mix(in srgb, var(--primary-bg) 60%, transparent);
+}
+window#launcher box.launcher button.app-item:hover image, window#launcher box.launcher button.app-item:focus image {
+  -gtk-icon-shadow: 2px 2px var(--primary-bg);
+}
+window#launcher box.launcher button.app-item:active {
+  background-color: color-mix(in srgb, var(--primary-bg) 50%, transparent);
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+}
+window#launcher box.launcher button.app-item:active label.title {
+  color: var(--fg);
+}
+window#launcher box.launcher label.launch-hint {
+  color: color-mix(in srgb, var(--fg) 70%, transparent);
 }
 
 .notification.critical {
@@ -1208,131 +1333,6 @@ window#quicksettings .quicksettings box.media box.player box.horizontal.vertical
 }
 window#quicksettings .quicksettings box.media box.player box.horizontal.vertical > *:last-child {
   margin-bottom: 0;
-}
-
-window#launcher {
-  background-color: transparent;
-}
-window#launcher box.launcher box.quicklaunch.horizontal > * {
-  margin: 0 calc(var(--spacing) * 1 / 2);
-}
-window#launcher box.launcher box.quicklaunch.horizontal > *:first-child {
-  margin-left: 0;
-}
-window#launcher box.launcher box.quicklaunch.horizontal > *:last-child {
-  margin-right: 0;
-}
-window#launcher box.launcher box.quicklaunch.vertical > * {
-  margin: calc(var(--spacing) * 1 / 2) 0;
-}
-window#launcher box.launcher box.quicklaunch.vertical > *:first-child {
-  margin-top: 0;
-}
-window#launcher box.launcher box.quicklaunch.vertical > *:last-child {
-  margin-bottom: 0;
-}
-window#launcher box.launcher box.quicklaunch {
-  margin-top: var(--spacing);
-}
-window#launcher box.launcher box.quicklaunch button {
-  padding: calc(var(--padding) / 2);
-}
-window#launcher box.launcher box.quicklaunch button image {
-  transition: var(--transition);
-}
-window#launcher box.launcher box.quicklaunch button:hover, window#launcher box.launcher box.quicklaunch button:focus-visible {
-  outline: none;
-}
-window#launcher box.launcher box.quicklaunch button:hover image, window#launcher box.launcher box.quicklaunch button:focus-visible image {
-  -gtk-icon-shadow: 2px 2px var(--primary-bg);
-}
-window#launcher box.launcher entry {
-  margin: var(--spacing);
-}
-window#launcher box.launcher entry:focus-visible {
-  outline: none;
-}
-window#launcher box.launcher entry selection {
-  color: color-mix(in srgb, var(--fg) 50%, var(--bg));
-  background-color: transparent;
-}
-window#launcher box.launcher entry label,
-window#launcher box.launcher entry image {
-  color: var(--fg);
-}
-window#launcher box.launcher image.spinner {
-  color: var(--primary-bg);
-  margin-right: var(--spacing);
-}
-window#launcher box.launcher separator {
-  margin: 4pt 0;
-  background-color: var(--popover-border-color);
-}
-window#launcher box.launcher button.app-item {
-  padding: var(--padding);
-  transition: var(--transition);
-  background-color: transparent;
-  background-image: none;
-  box-shadow: none;
-}
-window#launcher box.launcher button.app-item:focus-visible {
-  outline: none;
-}
-window#launcher box.launcher button.app-item > box.horizontal > * {
-  margin: 0 calc(var(--spacing) * 0.5 / 2);
-}
-window#launcher box.launcher button.app-item > box.horizontal > *:first-child {
-  margin-left: 0;
-}
-window#launcher box.launcher button.app-item > box.horizontal > *:last-child {
-  margin-right: 0;
-}
-window#launcher box.launcher button.app-item > box.vertical > * {
-  margin: calc(var(--spacing) * 0.5 / 2) 0;
-}
-window#launcher box.launcher button.app-item > box.vertical > *:first-child {
-  margin-top: 0;
-}
-window#launcher box.launcher button.app-item > box.vertical > *:last-child {
-  margin-bottom: 0;
-}
-window#launcher box.launcher button.app-item label {
-  transition: var(--transition);
-}
-window#launcher box.launcher button.app-item label.title {
-  color: var(--fg);
-}
-window#launcher box.launcher button.app-item label.description {
-  color: color-mix(in srgb, var(--fg) 70%, transparent);
-  font-weight: normal;
-}
-window#launcher box.launcher button.app-item.selected {
-  border-style: solid;
-  border-width: 0 0 0 5px;
-  border-color: var(--primary-bg);
-}
-window#launcher box.launcher button.app-item image {
-  transition: var(--transition);
-}
-window#launcher box.launcher button.app-item:hover label.title, window#launcher box.launcher button.app-item:focus label.title {
-  color: var(--primary-bg);
-}
-window#launcher box.launcher button.app-item:hover label.description, window#launcher box.launcher button.app-item:focus label.description {
-  color: color-mix(in srgb, var(--primary-bg) 60%, transparent);
-}
-window#launcher box.launcher button.app-item:hover image, window#launcher box.launcher button.app-item:focus image {
-  -gtk-icon-shadow: 2px 2px var(--primary-bg);
-}
-window#launcher box.launcher button.app-item:active {
-  background-color: color-mix(in srgb, var(--primary-bg) 50%, transparent);
-  border-radius: var(--radius);
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-}
-window#launcher box.launcher button.app-item:active label.title {
-  color: var(--fg);
-}
-window#launcher box.launcher label.launch-hint {
-  color: color-mix(in srgb, var(--fg) 70%, transparent);
 }
 
 window#bar {
