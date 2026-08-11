@@ -6,20 +6,16 @@ the editor, and the file manager:
 | Directory | What it configures |
 | --------- | ------------------ |
 | `hypr/`   | [Hyprland](https://hypr.land) compositor, configured with the native Lua config format (Hyprland ≥ 0.55), plus `hypridle` (idle daemon) and `hyprlock` (screen locker). |
-| `ags/`    | [AGS](https://github.com/Aylur/ags) v3 / Astal desktop shell (bar, launcher, workspace overview, quick settings, notifications, OSD, power menu and settings panel), with dynamic theming via [matugen](https://github.com/InioX/matugen). |
 | `kitty/`  | [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator. |
 | `nvim/`   | [Neovim](https://neovim.io) config based on [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), using the built-in `vim.pack` plugin manager. |
 | `yazi/`   | [Yazi](https://github.com/sxyazi/yazi) terminal file manager (Tokyo Night flavor). |
 
 ## Provenance
 
-- **`nvim/`** is a live git subtree of kickstart-modular and can still pull
-  upstream updates. See its own `nvim/README.md` for the authoritative setup.
-- **`ags/`** and **`hypr/`** started from [ags2-shell](https://github.com/TheWolfStreet/ags2-shell)
-  and an [ML4W](https://github.com/mylinuxforwork/hyprland-starter)-style
-  Hyprland base, but have since diverged far enough that they no longer track
-  upstream, they are maintained directly in this repo. Attribution and license
-  terms are kept in each directory.
+- **`nvim/`** started from [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), and is now maintained directly here rather than tracking upstream. MIT attribution is kept in `nvim/LICENSE.MD`.
+- **`hypr/`** started from and an [ML4W](https://github.com/mylinuxforwork/hyprland-starter)-style
+  Hyprland base and has since diverged. License terms are in `hypr/LICENSE`.
+
 
 ## Installation
 
@@ -27,7 +23,6 @@ These are `~/.config` configs. Symlink (or copy) each directory into place, e.g.
 
 ```sh
 ln -s ~/dotfiles/hypr  ~/.config/hypr
-ln -s ~/dotfiles/ags   ~/.config/ags
 ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/nvim  ~/.config/nvim
 ln -s ~/dotfiles/yazi  ~/.config/yazi
@@ -71,19 +66,6 @@ Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 - `networkmanager` (`nmcli`): Wi-Fi toggle
 - `wtype`: sends the `F5` refresh key (`XF86Refresh` bind)
 
-### AGS shell (`ags/`)
-
-- `aylurs-gtk-shell` / `ags` (v3): the shell runtime (see `ags/package.json`)
-- `matugen`: dynamic color-scheme generation
-- `wayshot` and `wf-recorder`: screenshot and screen recording
-- `hyprpicker`: color picker
-- `libheif` (`heif-dec`): HEIF wallpaper support
-- `libnotify` (`notify-send`): notifications
-- `bluez-utils` (`bluetoothctl`): Bluetooth device management
-- `brightnessctl`: backlight control
-- `pavucontrol`: *optional*, opened from the audio quick-setting
-- `tmux`: *optional*, receives the generated accent color if present
-- `asusctl`: *optional*, ASUS laptop controls (power profiles, etc.)
 
 ### Neovim (`nvim/`)
 
@@ -111,7 +93,6 @@ Subdirectories with their own license are governed by that license instead:
 
 | Subdirectory | License |
 | ------------ | ------- |
-| `ags/` | **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial): see `ags/LICENSE`. Note this is a *non-commercial* license. |
 | `hypr/` | **GPL-3.0**: see `hypr/LICENSE`. |
 | `nvim/` | MIT: see `nvim/LICENSE.md`. |
 | `yazi/flavors/tokyonight-night.yazi/` | MIT: bundled third-party flavor, see its `LICENSE`. |
