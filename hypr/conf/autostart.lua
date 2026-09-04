@@ -2,6 +2,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
+	hl.exec_cmd("dms run")
 
 	hl.exec_cmd("systemctl --user start hyprland-session.target")
 end)

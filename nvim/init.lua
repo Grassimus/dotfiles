@@ -96,5 +96,9 @@ require 'pack'
 -- [[ Configure and install plugins ]]
 require 'plugins'
 
+-- [[ Highlight overrides ]]
+-- Last, so it wins over whatever colorscheme the plugins settled on.
+require 'highlights'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

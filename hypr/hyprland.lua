@@ -10,3 +10,9 @@ require("conf.gestures")
 require("conf.misc")
 require("conf.windowrules")
 require("conf.binds")
+
+-- DMS Include Configs
+require("dms.layout")
+require("dms.cursor")
+require("dms.binds")
+require("dms.binds-user")
