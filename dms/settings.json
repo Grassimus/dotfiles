@@ -9,7 +9,7 @@
   "matugenTargetMonitor": "",
   "popupTransparency": 0.7,
   "dockTransparency": 0.85,
-  "widgetBackgroundColor": "custom",
+  "widgetBackgroundColor": "sch",
   "widgetBackgroundCustomColor": "#000000",
   "widgetBackgroundCustomStrength": 1,
   "widgetColorMode": "default",
@@ -29,8 +29,8 @@
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
   "mangoTrackpadNaturalScrolling": true,
-  "firstDayOfWeek": -1,
-  "showWeekNumber": false,
+  "firstDayOfWeek": 1,
+  "showWeekNumber": true,
   "calendarBackend": "auto",
   "clockFormat": "auto",
   "showSeconds": false,
@@ -166,7 +166,7 @@
   "workspaceAppIconSizeOffset": 0,
   "groupWorkspaceApps": true,
   "groupActiveWorkspaceApps": false,
-  "workspaceFollowFocus": false,
+  "workspaceFollowFocus": true,
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
@@ -230,7 +230,7 @@
   "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [],
   "centeringMode": "index",
-  "clockDateFormat": "",
+  "clockDateFormat": "ddd MMM d",
   "lockDateFormat": "",
   "greeterRememberLastSession": true,
   "greeterRememberLastUser": true,
@@ -242,8 +242,12 @@
   "greeterFontFamily": "",
   "greeterWallpaperFillMode": "",
   "greeterPamExternallyManaged": false,
-  "greeterSyncPending": false,
-  "greeterSyncBaseline": {},
+  "greeterSyncPending": true,
+  "greeterSyncBaseline": {
+    "clockFormat": "auto",
+    "showSeconds": false,
+    "padHours12Hour": false
+  },
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -361,7 +365,7 @@
   "batteryLockTimeout": 0,
   "batterySuspendTimeout": 0,
   "batterySuspendBehavior": 0,
-  "batteryProfileName": "",
+  "batteryProfileName": "0",
   "batteryPostLockMonitorTimeout": 0,
   "batteryChargeLimit": 100,
   "batteryNotifyChargeLimit": false,
@@ -372,7 +376,7 @@
   "batteryChargeLimitNotificationType": 0,
   "batteryLowNotificationType": 0,
   "batteryCriticalNotificationType": 1,
-  "batteryAutoPowerSaver": false,
+  "batteryAutoPowerSaver": true,
   "lockBeforeSuspend": false,
   "loginctlLockIntegration": true,
   "fadeToLockEnabled": true,
@@ -511,7 +515,7 @@
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
-  "osdCapsLockEnabled": true,
+  "osdCapsLockEnabled": false,
   "osdPowerProfileEnabled": true,
   "osdAudioOutputEnabled": true,
   "powerActionConfirm": true,
@@ -570,36 +574,65 @@
         "launcherButton",
         "workspaceSwitcher",
         {
-          "id": "focusedWindow",
+          "id": "runningApps",
+          "enabled": true,
+          "runningAppsCompactMode": true,
+          "runningAppsGroupByApp": false,
+          "runningAppsCurrentWorkspace": true,
+          "runningAppsCurrentMonitor": false
+        },
+        {
+          "id": "music",
           "enabled": true
         }
       ],
       "centerWidgets": [
-        "music",
         "clock",
         "weather"
       ],
       "rightWidgets": [
-        "systemTray",
         "clipboard",
+        {
+          "id": "colorPicker",
+          "enabled": true
+        },
+        {
+          "id": "separator",
+          "enabled": true
+        },
         "cpuUsage",
         "memUsage",
-        "notificationButton",
         "battery",
-        "controlCenterButton"
+        {
+          "id": "separator",
+          "enabled": true
+        },
+        {
+          "id": "notificationButton",
+          "enabled": true
+        },
+        "controlCenterButton",
+        {
+          "id": "separator",
+          "enabled": true
+        },
+        {
+          "id": "powerMenuButton",
+          "enabled": true
+        }
       ],
-      "spacing": 4,
-      "innerPadding": 4,
+      "spacing": 0,
+      "innerPadding": 8,
       "barInsetPadding": 4,
       "bottomGap": 0,
-      "transparency": 0,
-      "widgetTransparency": 0.7,
+      "transparency": 0.7,
+      "widgetTransparency": 0.58,
       "squareCorners": true,
       "noBackground": false,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
-      "widgetPadding": 8,
+      "widgetPadding": 9,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
@@ -611,8 +644,8 @@
       "widgetOutlineColor": "secondary",
       "widgetOutlineOpacity": 0.22,
       "widgetOutlineThickness": 1,
-      "fontScale": 1,
-      "iconScale": 1,
+      "fontScale": 0.9,
+      "iconScale": 0.95,
       "autoHide": false,
       "autoHideStrict": false,
       "autoHideDelay": 250,
@@ -741,7 +774,7 @@
   "frameLauncherArcExtender": false,
   "frameLauncherEdgeHover": false,
   "frameMode": "connected",
-  "barInsetPaddingShared": 4,
+  "barInsetPaddingShared": 6,
   "barInsetPaddingSyncAll": true,
   "frameBarInsetPadding": 16,
   "configVersion": 13
