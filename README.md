@@ -13,7 +13,7 @@ the editor, and the file manager:
 
 ## Provenance
 
-- **`nvim/`** started from [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), and is now maintained directly here rather than tracking upstream. MIT attribution is kept in `nvim/LICENSE.MD`.
+- **`nvim/`** started from [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), and is now maintained directly here rather than tracking upstream. MIT attribution is kept in `nvim/LICENSE.md`.
 - **`hypr/`** started from and an [ML4W](https://github.com/mylinuxforwork/hyprland-starter)-style
   Hyprland base and has since diverged. License terms are in `hypr/LICENSE`.
 
@@ -94,8 +94,9 @@ generate `kitty/dank-theme.conf`, `hypr/dms/*.lua` and `nvim/colors/dms.lua`
 expect the repo to go dirty whenever the wallpaper or theme changes. Which
 templates run is part of `dms/settings.json`.
 
-Because of this, kitty's own theme (`kitty/current-theme.conf`) and Yazi's
-Tokyo Night flavor are both disabled; Yazi follows the terminal palette.
+Because of this, kitty's own theme (`kitty/current-theme.conf`) is disabled.
+Yazi follows the terminal palette, with a few color remapping tweaks in
+`yazi/theme.toml`.
 
 ### Neovim (`nvim/`)
 
@@ -124,4 +125,3 @@ Subdirectories with their own license are governed by that license instead:
 | ------------ | ------- |
 | `hypr/` | **GPL-3.0**: see `hypr/LICENSE`. |
 | `nvim/` | MIT: see `nvim/LICENSE.md`. |
-| `yazi/flavors/tokyonight-night.yazi/` | MIT: bundled third-party flavor, see its `LICENSE`. |
