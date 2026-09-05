@@ -5,7 +5,7 @@ the editor, and the file manager:
 
 | Directory | What it configures |
 | --------- | ------------------ |
-| `hypr/`   | [Hyprland](https://hypr.land) compositor, configured with the native Lua config format (Hyprland ≥ 0.55), plus `hypridle` (idle daemon) and `hyprlock` (screen locker). |
+| `hypr/`   | [Hyprland](https://hypr.land) compositor, configured with the native Lua config format (Hyprland ≥ 0.55). |
 | `kitty/`  | [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator. |
 | `nvim/`   | [Neovim](https://neovim.io) config based on [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), using the built-in `vim.pack` plugin manager. |
 | `yazi/`   | [Yazi](https://github.com/sxyazi/yazi) terminal file manager. |
@@ -47,10 +47,7 @@ Package names below follow Arch Linux; adjust for your distribution.
 ### Hyprland session (`hypr/`)
 
 - `hyprland`: required for the native Lua config format used here
-- `hypridle`: idle management (`hypr/hypridle.conf`)
-- `hyprlock`: screen locker (`hypr/hyprlock.conf`)
 - `dms-shell`: DankMaterialShell, started on login (see below)
-- `awww`: wallpaper daemon (`awww-daemon`, started on login)
 - `xorg-xrdb`: merges `~/.Xresources` on startup
 
 ### Keybind / utility programs
@@ -63,7 +60,7 @@ Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 - `grim` + `slurp`: region screenshots
 - `wl-clipboard` (`wl-copy`): Wayland clipboard
 - `wireplumber` / `pipewire` (`wpctl`): audio volume & mute
-- `brightnessctl`: backlight control (also used by `hypridle`)
+- `brightnessctl`: backlight control
 - `networkmanager` (`nmcli`): Wi-Fi toggle
 - `wtype`: sends the `F5` refresh key (`XF86Refresh` bind)
 
