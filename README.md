@@ -67,20 +67,20 @@ Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 
 ### DankMaterialShell (`dms/`)
 
-```sh
-sudo pacman -S dms-shell matugen cava qt6-multimedia
-```
+- `matugen`: dynamic color palette generator
+- `qtengine` (AUR): theme plugin for Qt applications
 
-`matugen` is optional upstream but required here, since this config gets its
-colors from it. `cava` (visualizer) and `qt6-multimedia` (sound feedback) are
+
+`matugen` and `qtengine` are optional upstream but required for full functionality here.
+`cava` (visualizer) and `qt6-multimedia` (sound feedback) are
 optional. `quickshell` and `dgop` come in as dependencies of `dms-shell`.
 
-Optionally, for the login screen:
+Note: You may have to paste the location of `DankMatugen.colors` in `~/.config/qtengine/config.json`.
 
-```sh
-paru -S greetd-dms-greeter-bin
-dms-greeter install
-```
+
+For the login screen:
+- `greetd-dms-greeter-bin` (AUR): greetd-based greeter
+
 
 `dms run` is started from `hypr/conf/autostart.lua`, and `SUPER + space` is
 rebound to its launcher in `hypr/dms/binds-user.lua`.
