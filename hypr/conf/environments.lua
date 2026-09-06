@@ -12,7 +12,6 @@ hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 
 -- GTK
 hl.env("GDK_SCALE", "1")
-hl.env("GTK_THEME", "Adwaita:dark")
 
 -- Mozilla
 hl.env("MOZ_ENABLE_WAYLAND", "1")
