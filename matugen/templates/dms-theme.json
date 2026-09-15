@@ -1,0 +1,29 @@
+{
+  "name": "Dynamic Black",
+  "matugen_type": "scheme-tonal-spot",
+
+  "primary": "{{ colors.primary.default.hex }}",
+  "primaryText": "{{ colors.on_primary.default.hex }}",
+  "primaryContainer": "{{ colors.primary_container.default.hex }}",
+  "secondary": "{{ colors.secondary.default.hex }}",
+  "surfaceTint": "{{ colors.primary.default.hex }}",
+
+  "surfaceText": "{{ colors.on_surface.default.hex }}",
+  "surfaceVariantText": "{{ colors.on_surface_variant.default.hex }}",
+  "backgroundText": "{{ colors.on_background.default.hex }}",
+  "outline": "{{ colors.outline.default.hex }}",
+
+  "error": "{{ colors.error.default.hex }}",
+  "warning": "{{ colors.tertiary.default.hex }}",
+  "info": "{{ colors.primary.default.hex }}",
+
+  "surfaceVariant": "{{ colors.surface_variant.default.hex }}",
+  "surfaceContainerHighest": "{{ colors.surface_container_highest.default.hex }}",
+
+  "background": "#000000",
+  "surface": "#000000",
+  "surfaceContainerLowest": "#000000",
+  "surfaceContainerLow": "#000000",
+  "surfaceContainer": "#000000",
+  "surfaceContainerHigh": "#000000"
+}

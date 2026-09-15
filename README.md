@@ -1,7 +1,7 @@
 # dotfiles
 
-Personal configuration for a [Hyprland](https://hypr.land) desktop on Arch Linux. It covers the compositor, a custom status bar / shell, the terminal,
-the editor, and the file manager:
+Personal configuration for a [Hyprland](https://hypr.land) desktop on Arch Linux. It covers the compositor, a status bar / shell, the terminal,
+the editor, automatic color palette generation, and the file manager:
 
 | Directory | What it configures |
 | --------- | ------------------ |
@@ -10,6 +10,9 @@ the editor, and the file manager:
 | `nvim/`   | [Neovim](https://neovim.io) config based on [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), using the built-in `vim.pack` plugin manager. |
 | `yazi/`   | [Yazi](https://github.com/sxyazi/yazi) terminal file manager. |
 | `dms/`   | [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) (DMS), the Quickshell-based bar and shell. |
+| `matugen/`   | [Matugen](https://github.com/InioX/matugen), dynamic color palette generator. |
+| `obsidian/`   | [Obsidian](https://github.com/obsidianmd/obsidian-releases), feature-rich notes app. |
+| `scripts/`   | Utility scripts |
 
 ## Provenance
 
@@ -28,11 +31,30 @@ ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/nvim  ~/.config/nvim
 ln -s ~/dotfiles/yazi  ~/.config/yazi
 ln -s ~/dotfiles/dms/settings.json   ~/.config/DankMaterialShell/settings.json
+ln -s ~/dotfiles/dms/themes/dynamic_black.json ~/.config/DankMaterialShell/themes/dynamic_black.json
+ln -s ~/dotfiles/matugen ~/.config/matugen
+ln -s ~/dotfiles/obsidian/themes/ ~/<path_to_your_obsidian_vault>/.obsidian/themes
+ln -s ~/dotfiles/obsidian/app.json ~/<path_to_your_obsidian_vault>/.obsidian/app.json
+ln -s ~/dotfiles/obsidian/appearance.json ~/<path_to_your_obsidian_vault>/.obsidian/appearance.json
+ln -s ~/dotfiles/obsidian/community-plugins.json ~/<path_to_your_obsidian_vault>/.obsidian/community-plugins.json
+
+ln -s ~/dotfiles/scripts/custom-theme-watch.sh ~/.local/bin/custom-theme-watch.sh
 ```
+
+`custom-theme-watch.sh` runs as a systemd user service, started with the
+graphical session:
+
+```sh
+ln -s ~/dotfiles/scripts/custom-theme-watch.service ~/.config/systemd/user/custom-theme-watch.service
+systemctl --user daemon-reload
+systemctl --user enable --now custom-theme-watch.service
+```
+
+While it might be tempting to just symlink the whole `obsidian/` directory, you should avoid doing so, since Obsidian stores vault-specific data in the same directory as the general configs.j
 
 Most components install their own runtime pieces:
 
-- **kitty**, **Yazi** and **Neovim** each have their own upstream install
+- **kitty**, **Yazi**, **DankMaterialShell** and **Neovim** each have their own upstream install
   guides, follow those to get the program itself.
 - **Neovim** bootstraps all of its plugins on first launch via the built-in
   `vim.pack` manager, and builds the ones that need it automatically.
@@ -67,11 +89,10 @@ Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 
 ### DankMaterialShell (`dms/`)
 
-- `matugen`: dynamic color palette generator
 - `qtengine` (AUR): theme plugin for Qt applications
 
 
-`matugen` and `qtengine` are optional upstream but required for full functionality here.
+`qtengine` is optional upstream but required for full functionality here.
 `cava` (visualizer) and `qt6-multimedia` (sound feedback) are
 optional. `quickshell` and `dgop` come in as dependencies of `dms-shell`.
 
@@ -95,6 +116,9 @@ Because of this, kitty's own theme (`kitty/current-theme.conf`) is disabled.
 Yazi follows the terminal palette, with a few color remapping tweaks in
 `yazi/theme.toml`.
 
+### Matugen (`matugen/`)
+- `matugen`: doesn't have any dependencies besides the package itself.
+
 ### Neovim (`nvim/`)
 
 Plugins install themselves, but these system tools cannot and must be present:
@@ -111,6 +135,10 @@ See `nvim/README.md` for the full, authoritative list.
 - `yazi`: the file manager
 - Recommended preview helpers: `ffmpegthumbnailer`, `unarchiver` (`unar`), `jq`,
   `poppler`, `fd`, `ripgrep`, `fzf`, `zoxide`, `imagemagick`
+
+### Obsidian (`obsidian/`)
+- `obsidian`: the notes app
+- The plugins are optional, the complete list is inside `obsidian/community-plugins.json`.
 
 ## License
 

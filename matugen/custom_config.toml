@@ -1,0 +1,13 @@
+# Standalone matugen config, separate from anything DMS manages.
+
+[config]
+
+# DankMaterialShell
+[templates.dms]
+input_path = '~/dotfiles/matugen/templates/dms-theme.json'
+output_path = '~/dotfiles/dms/themes/dynamic_black.json'
+
+# Obsidian
+[templates.obsidian]
+input_path = '~/dotfiles/matugen/templates/obsidian.css'
+output_path = '~/dotfiles/obsidian/themes/Matugen/theme.css'

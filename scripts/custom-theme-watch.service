@@ -1,0 +1,14 @@
+[Unit]
+Description=Regenerate the custom matugen theme on wallpaper change
+# DMS is started from hypr/conf/autostart.lua, not from dms.service, so there is nothing meaningful to order against beyond the session itself.
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/custom-theme-watch.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,29 @@
+{
+  "name": "Dynamic Black",
+  "matugen_type": "scheme-tonal-spot",
+
+  "primary": "#cebdfe",
+  "primaryText": "#35275d",
+  "primaryContainer": "#4c3e76",
+  "secondary": "#cbc3dc",
+  "surfaceTint": "#cebdfe",
+
+  "surfaceText": "#e6e1e9",
+  "surfaceVariantText": "#cac4cf",
+  "backgroundText": "#e6e1e9",
+  "outline": "#938f99",
+
+  "error": "#ffb4ab",
+  "warning": "#efb8c9",
+  "info": "#cebdfe",
+
+  "surfaceVariant": "#48454e",
+  "surfaceContainerHighest": "#36343a",
+
+  "background": "#000000",
+  "surface": "#000000",
+  "surfaceContainerLowest": "#000000",
+  "surfaceContainerLow": "#000000",
+  "surfaceContainer": "#000000",
+  "surfaceContainerHigh": "#000000"
+}
