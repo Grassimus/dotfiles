@@ -37,6 +37,7 @@ ln -s ~/dotfiles/obsidian/themes/ ~/<path_to_your_obsidian_vault>/.obsidian/them
 ln -s ~/dotfiles/obsidian/app.json ~/<path_to_your_obsidian_vault>/.obsidian/app.json
 ln -s ~/dotfiles/obsidian/appearance.json ~/<path_to_your_obsidian_vault>/.obsidian/appearance.json
 ln -s ~/dotfiles/obsidian/community-plugins.json ~/<path_to_your_obsidian_vault>/.obsidian/community-plugins.json
+ln -s ~/dotfiles/obsidian/.obsidian.vimrc ~/<path_to_your_obsidian_vault>/.obsidian.vimrc
 
 ln -s ~/dotfiles/scripts/custom-theme-watch.sh ~/.local/bin/custom-theme-watch.sh
 ```
