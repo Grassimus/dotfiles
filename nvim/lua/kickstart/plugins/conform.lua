@@ -9,6 +9,7 @@ require('conform').setup {
     local enabled_filetypes = {
       lua = true,
       c = true,
+      cpp = true,
       -- python = true,
     }
     if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -22,22 +23,23 @@ require('conform').setup {
   },
   -- You can also specify external formatters in here.
   formatters_by_ft = {
-      lua = { 'stylua' },
+    lua = { 'stylua' },
 
-      c = { 'clang_format' },
+    c = { 'clang_format' },
+    cpp = { 'clang_format' },
 
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      json = { 'prettier' },
-      html = { 'prettier' },
-      css = { 'prettier' },
-      scss = { 'prettier' },
+    javascript = { 'prettier' },
+    typescript = { 'prettier' },
+    javascriptreact = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    json = { 'prettier' },
+    html = { 'prettier' },
+    css = { 'prettier' },
+    scss = { 'prettier' },
 
-      python = { 'black' },
+    python = { 'black' },
 
-      conf = { 'prettier' },
+    conf = { 'prettier' },
 
     -- rust = { 'rustfmt' },
     -- Conform can also run multiple formatters sequentially

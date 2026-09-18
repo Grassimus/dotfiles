@@ -9,9 +9,13 @@ local function gh(repo) return 'https://github.com/' .. repo end
 vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
 -- Ensure basic parsers are installed
-local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+local parsers = { 'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
 require('nvim-treesitter').install(parsers)
 
+-- Treesitter's indent queries for C/C++ are very thin (cpp's is four lines and
+-- mostly inherits C), and setting `indentexpr` overrules the built-in `cindent`,
+-- which handles these languages far better. So skip TS indent for them.
+local skip_ts_indent = { c = true, cpp = true }
 ---@param buf integer
 ---@param language string
 local function treesitter_try_attach(buf, language)
@@ -30,7 +34,7 @@ local function treesitter_try_attach(buf, language)
   local has_indent_query = vim.treesitter.query.get(language, 'indents') ~= nil
 
   -- Enable treesitter based indentation
-  if has_indent_query then vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" end
+  if has_indent_query and not skip_ts_indent[language] then vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" end
 end
 
 local available_parsers = require('nvim-treesitter').get_available()
