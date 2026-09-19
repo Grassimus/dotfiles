@@ -12,3 +12,11 @@ hl.config({
 		},
 	},
 })
+
+hl.config({
+	input = {
+		tablet = {
+			output = "eDP-1",
+		},
+	},
+})
