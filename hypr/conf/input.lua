@@ -10,12 +10,10 @@ hl.config({
 		touchpad = {
 			natural_scroll = true,
 		},
-	},
-})
-
-hl.config({
-	input = {
 		tablet = {
+			output = "eDP-1",
+		},
+		touchdevice = {
 			output = "eDP-1",
 		},
 	},
