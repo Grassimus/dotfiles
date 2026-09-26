@@ -50,7 +50,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now custom-theme-watch.service
 ```
 
-While it might be tempting to just symlink the whole `obsidian/` directory, you should avoid doing so, since Obsidian stores vault-specific data in the same directory as the general configs.j
+While it might be tempting to just symlink the whole `obsidian/` directory, you should avoid doing so, since Obsidian stores vault-specific data in the same directory as the general configs.
 
 Most components install their own runtime pieces:
 
