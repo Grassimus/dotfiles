@@ -36,7 +36,6 @@ ln -s ~/dotfiles/matugen ~/.config/matugen
 ln -s ~/dotfiles/obsidian/themes/ ~/<path_to_your_obsidian_vault>/.obsidian/themes
 ln -s ~/dotfiles/obsidian/app.json ~/<path_to_your_obsidian_vault>/.obsidian/app.json
 ln -s ~/dotfiles/obsidian/appearance.json ~/<path_to_your_obsidian_vault>/.obsidian/appearance.json
-ln -s ~/dotfiles/obsidian/community-plugins.json ~/<path_to_your_obsidian_vault>/.obsidian/community-plugins.json
 ln -s ~/dotfiles/obsidian/.obsidian.vimrc ~/<path_to_your_obsidian_vault>/.obsidian.vimrc
 
 ln -s ~/dotfiles/scripts/custom-theme-watch.sh ~/.local/bin/custom-theme-watch.sh
@@ -139,7 +138,7 @@ See `nvim/README.md` for the full, authoritative list.
 
 ### Obsidian (`obsidian/`)
 - `obsidian`: the notes app
-- The plugins are optional, the complete list is inside `obsidian/community-plugins.json`.
+- A plugin list is not included, as plugins change depending on what the vault is supposed to do.
 
 ## License
 
