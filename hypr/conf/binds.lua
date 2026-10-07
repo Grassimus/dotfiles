@@ -14,7 +14,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen()) -- Fullscreen
 hl.bind(mainMod .. " + MINUS", hl.dsp.layout("togglesplit")) -- Toggle split (dwindle)
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave")) -- Open browser
 
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('grim -g "$(slurp && sleep 0.3)" - | wl-copy'))
 
 -- Media / hardware keys (no modifier)
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"))
