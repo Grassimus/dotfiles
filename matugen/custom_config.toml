@@ -11,3 +11,8 @@ output_path = '~/dotfiles/dms/themes/dynamic_black.json'
 [templates.obsidian]
 input_path = '~/dotfiles/matugen/templates/obsidian.css'
 output_path = '~/dotfiles/obsidian/themes/Matugen/theme.css'
+
+# Unlayered Slicer
+[templates.unlayered_slicer]
+input_path = '~/dotfiles/matugen/templates/unlayered-slicer.json'
+output_path = '~/dotfiles/unlayered-slicer/themes/Matugen.json'
