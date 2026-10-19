@@ -38,6 +38,7 @@ ln -s ~/dotfiles/obsidian/app.json ~/<path_to_your_obsidian_vault>/.obsidian/app
 ln -s ~/dotfiles/obsidian/appearance.json ~/<path_to_your_obsidian_vault>/.obsidian/appearance.json
 ln -s ~/dotfiles/obsidian/.obsidian.vimrc ~/<path_to_your_obsidian_vault>/.obsidian.vimrc
 ln -s ~/dotfiles/unlayered-slicer/themes ~/.config/Unlayered\ Slicer/themes
+rmdir ~/.config/kicad/<version>/colors && ln -s ~/dotfiles/kicad/colors ~/.config/kicad/<version>/colors
 
 ln -s ~/dotfiles/scripts/custom-theme-watch.sh ~/.local/bin/custom-theme-watch.sh
 ```

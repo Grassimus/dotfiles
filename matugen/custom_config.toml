@@ -16,3 +16,8 @@ output_path = '~/dotfiles/obsidian/themes/Matugen/theme.css'
 [templates.unlayered_slicer]
 input_path = '~/dotfiles/matugen/templates/unlayered-slicer.json'
 output_path = '~/dotfiles/unlayered-slicer/themes/Matugen.json'
+
+# KiCad
+[templates.kicad]
+input_path = '~/dotfiles/matugen/templates/kicad.json'
+output_path = '~/dotfiles/kicad/colors/Matugen.json'
