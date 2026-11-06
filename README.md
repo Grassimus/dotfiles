@@ -79,7 +79,7 @@ Package names below follow Arch Linux; adjust for your distribution.
 Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 
 - `kitty`: terminal (also configured here)
-- `thunar`: graphical file manager
+- `dolphin`: graphical file manager
 - `brave`: web browser
 - `grim` + `slurp`: region screenshots
 - `wl-clipboard` (`wl-copy`): Wayland clipboard

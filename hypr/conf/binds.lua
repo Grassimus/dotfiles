@@ -1,4 +1,4 @@
--- keybinds.lua (or inline in hyprland.lua)
+-- keybinds.lua
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 
 local mainMod = "SUPER"
@@ -6,8 +6,9 @@ local mainMod = "SUPER"
 -- Actions
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty")) -- Open kitty terminal
 hl.bind(mainMod .. " + Q", hl.dsp.window.close()) -- Close current window
-hl.bind(mainMod .. " + M", hl.dsp.exit()) -- Exit Hyprland
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar")) -- Open file manager
+
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin")) -- Open file manager
+
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" })) -- Toggle floating
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen()) -- Fullscreen
 -- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("ags -i ags2-shell toggle launcher")) -- Open rofi
