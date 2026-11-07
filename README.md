@@ -11,6 +11,7 @@ the editor, automatic color palette generation, and the file manager:
 | `yazi/`   | [Yazi](https://github.com/sxyazi/yazi) terminal file manager. |
 | `dms/`   | [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) (DMS), the Quickshell-based bar and shell. |
 | `matugen/`   | [Matugen](https://github.com/InioX/matugen), dynamic color palette generator. |
+| `cosmic/`   | Matugen-generated theme for [Cosmic Files](https://github.com/pop-os/cosmic-files) (and other libcosmic apps). |
 | `obsidian/`   | [Obsidian](https://github.com/obsidianmd/obsidian-releases), feature-rich notes app. |
 | `scripts/`   | Utility scripts |
 
@@ -79,7 +80,7 @@ Package names below follow Arch Linux; adjust for your distribution.
 Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 
 - `kitty`: terminal (also configured here)
-- `dolphin`: graphical file manager
+- `cosmic-files`: graphical file manager
 - `brave`: web browser
 - `grim` + `slurp`: region screenshots
 - `wl-clipboard` (`wl-copy`): Wayland clipboard
@@ -137,6 +138,16 @@ See `nvim/README.md` for the full, authoritative list.
 - `yazi`: the file manager
 - Recommended preview helpers: `ffmpegthumbnailer`, `unarchiver` (`unar`), `jq`,
   `poppler`, `fd`, `ripgrep`, `fzf`, `zoxide`, `imagemagick`
+
+### Cosmic Files (`cosmic/`)
+- `cosmic-files`: the file manager
+
+No symlink needed: matugen renders `cosmic/theme.ron`, and its `post_hook`
+(`scripts/cosmic-theme-apply.sh`) splits it into the one-file-per-field layout
+libcosmic reads from `~/.config/cosmic/com.system76.CosmicTheme.Dark/v2/`.
+Fields not in the template (spacing, corner radii, success/warning colors)
+keep libcosmic's dark defaults. Requires a libcosmic with hex color support
+(Cosmic Files ≥ 1.11 builds from mid-2026 on).
 
 ### Obsidian (`obsidian/`)
 - `obsidian`: the notes app

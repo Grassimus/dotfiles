@@ -7,7 +7,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty")) -- Open kitty terminal
 hl.bind(mainMod .. " + Q", hl.dsp.window.close()) -- Close current window
 
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin")) -- Open file manager
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("cosmic-files")) -- Open file manager
 
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" })) -- Toggle floating
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen()) -- Fullscreen
