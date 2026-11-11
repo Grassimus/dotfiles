@@ -341,7 +341,7 @@
     {
       "id": "user",
       "enabled": true,
-      "w": 10,
+      "w": 5,
       "h": 1,
       "col": 0,
       "row": 0
@@ -349,7 +349,7 @@
     {
       "id": "settings",
       "enabled": true,
-      "w": 2,
+      "w": 1,
       "h": 1,
       "small": true,
       "col": 5,
@@ -358,7 +358,7 @@
     {
       "id": "lock",
       "enabled": true,
-      "w": 2,
+      "w": 1,
       "h": 1,
       "small": true,
       "col": 6,
@@ -367,7 +367,7 @@
     {
       "id": "power",
       "enabled": true,
-      "w": 2,
+      "w": 1,
       "h": 1,
       "small": true,
       "col": 7,
@@ -376,23 +376,25 @@
     {
       "id": "brightnessSlider",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
+      "small": true,
       "col": 0,
       "row": 1
     },
     {
       "id": "volumeSlider",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
+      "small": true,
       "col": 4,
       "row": 1
     },
     {
       "id": "wifi",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 0,
       "row": 2
@@ -400,7 +402,7 @@
     {
       "id": "bluetooth",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 4,
       "row": 2
@@ -408,7 +410,7 @@
     {
       "id": "audioOutput",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 0,
       "row": 3
@@ -416,7 +418,7 @@
     {
       "id": "audioInput",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 4,
       "row": 3
@@ -424,7 +426,7 @@
     {
       "id": "darkMode",
       "enabled": true,
-      "w": 4,
+      "w": 2,
       "h": 1,
       "col": 0,
       "row": 4,
@@ -433,7 +435,7 @@
     {
       "id": "nightMode",
       "enabled": true,
-      "w": 4,
+      "w": 2,
       "h": 1,
       "col": 2,
       "row": 4,
@@ -442,7 +444,7 @@
     {
       "id": "doNotDisturb",
       "enabled": true,
-      "w": 4,
+      "w": 2,
       "h": 1,
       "col": 4,
       "row": 4,
@@ -451,7 +453,7 @@
     {
       "id": "idleInhibitor",
       "enabled": true,
-      "w": 4,
+      "w": 2,
       "h": 1,
       "col": 6,
       "row": 4,
@@ -460,7 +462,7 @@
     {
       "id": "battery",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 0,
       "row": 5
@@ -468,7 +470,7 @@
     {
       "id": "diskUsage",
       "enabled": true,
-      "w": 8,
+      "w": 4,
       "h": 1,
       "col": 4,
       "row": 5
@@ -476,7 +478,7 @@
     {
       "id": "runningApps",
       "enabled": true,
-      "w": 14,
+      "w": 7,
       "h": 1,
       "small": true,
       "col": 0,
@@ -485,7 +487,7 @@
     {
       "id": "edit",
       "enabled": true,
-      "w": 2,
+      "w": 1,
       "h": 1,
       "small": true,
       "col": 7,
