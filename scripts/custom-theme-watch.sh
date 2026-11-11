@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Watch DMS session state and regenerate the custom theme whenever the
+# Watch Dux Shell session state and regenerate the custom theme whenever the
 # wallpaper actually changes.
 #
 # session.json is only the trigger; the wallpaper path comes from IPC so we
@@ -7,12 +7,12 @@
 
 set -uo pipefail
 
-STATE_DIR="$HOME/.local/state/DankMaterialShell"
+STATE_DIR="$HOME/.local/state/dms"
 MATUGEN_CONFIG="$HOME/.config/matugen/custom_config.toml"
 MODE="dark"
 
 # Which of matugen's candidate source colours to use. 0 is the dominant one,
-# matching what DMS does internally. This MUST be set: without it matugen opens
+# matching what Dux Shell does internally. This MUST be set: without it matugen opens
 # an interactive picker, and with no terminal attached the service would block
 # forever waiting for an answer.
 SOURCE_INDEX=0

@@ -9,7 +9,7 @@ the editor, automatic color palette generation, and the file manager:
 | `kitty/`  | [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator. |
 | `nvim/`   | [Neovim](https://neovim.io) config based on [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim) (a modular fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)), using the built-in `vim.pack` plugin manager. |
 | `yazi/`   | [Yazi](https://github.com/sxyazi/yazi) terminal file manager. |
-| `dms/`   | [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) (DMS), the Quickshell-based bar and shell. |
+| `dux/`   | [Dux Shell](https://github.com/duxlabs-dev/dux-shell) (formerly DankMaterialShell / DMS), the Quickshell-based bar and shell. |
 | `matugen/`   | [Matugen](https://github.com/InioX/matugen), dynamic color palette generator. |
 | `cosmic/`   | Matugen-generated theme for [Cosmic Files](https://github.com/pop-os/cosmic-files) (and other libcosmic apps). |
 | `obsidian/`   | [Obsidian](https://github.com/obsidianmd/obsidian-releases), feature-rich notes app. |
@@ -31,8 +31,8 @@ ln -s ~/dotfiles/hypr  ~/.config/hypr
 ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/nvim  ~/.config/nvim
 ln -s ~/dotfiles/yazi  ~/.config/yazi
-ln -s ~/dotfiles/dms/settings.json   ~/.config/DankMaterialShell/settings.json
-ln -s ~/dotfiles/dms/themes/dynamic_black.json ~/.config/DankMaterialShell/themes/dynamic_black.json
+ln -s ~/dotfiles/dux/settings.json   ~/.config/dms/settings.json
+ln -s ~/dotfiles/dux/themes/dynamic_black.json ~/.config/dms/themes/dynamic_black.json
 ln -s ~/dotfiles/matugen ~/.config/matugen
 ln -s ~/dotfiles/obsidian/themes/ ~/<path_to_your_obsidian_vault>/.obsidian/themes
 ln -s ~/dotfiles/obsidian/app.json ~/<path_to_your_obsidian_vault>/.obsidian/app.json
@@ -57,7 +57,7 @@ While it might be tempting to just symlink the whole `obsidian/` directory, you 
 
 Most components install their own runtime pieces:
 
-- **kitty**, **Yazi**, **DankMaterialShell** and **Neovim** each have their own upstream install
+- **kitty**, **Yazi**, **Dux Shell** and **Neovim** each have their own upstream install
   guides, follow those to get the program itself.
 - **Neovim** bootstraps all of its plugins on first launch via the built-in
   `vim.pack` manager, and builds the ones that need it automatically.
@@ -72,7 +72,7 @@ Package names below follow Arch Linux; adjust for your distribution.
 ### Hyprland session (`hypr/`)
 
 - `hyprland`: required for the native Lua config format used here
-- `dms-shell`: DankMaterialShell, started on login (see below)
+- `dux-shell`: Dux Shell, started on login (see below)
 - `xorg-xrdb`: merges `~/.Xresources` on startup
 
 ### Keybind / utility programs
@@ -90,14 +90,14 @@ Referenced from `hypr/conf/binds.lua` and `autostart.lua`:
 - `wtype`: sends the `F5` refresh key (`XF86Refresh` bind)
 
 
-### DankMaterialShell (`dms/`)
+### Dux Shell (`dux/`)
 
 - `qtengine` (AUR): theme plugin for Qt applications
 
 
 `qtengine` is optional upstream but required for full functionality here.
 `cava` (visualizer) and `qt6-multimedia` (sound feedback) are
-optional. `quickshell` and `dgop` come in as dependencies of `dms-shell`.
+optional. `quickshell` and `dux-gop` come in as dependencies of `dux-shell`.
 
 Note: You may have to paste the location of `DankMatugen.colors` in `~/.config/qtengine/config.json`.
 
@@ -109,11 +109,11 @@ For the login screen:
 `dms run` is started from `hypr/conf/autostart.lua`, and `SUPER + space` is
 rebound to its launcher in `hypr/dms/binds-user.lua`.
 
-DMS drives the color scheme for the rest of the setup: its matugen templates
+Dux Shell drives the color scheme for the rest of the setup: its matugen templates
 generate `kitty/dank-theme.conf`, `hypr/dms/*.lua` and `nvim/colors/dms.lua`
 (gitignored) from the wallpaper. **Those files are overwritten in place**, so
 expect the repo to go dirty whenever the wallpaper or theme changes. Which
-templates run is part of `dms/settings.json`.
+templates run is part of `dux/settings.json`.
 
 Because of this, kitty's own theme (`kitty/current-theme.conf`) is disabled.
 Yazi follows the terminal palette, with a few color remapping tweaks in

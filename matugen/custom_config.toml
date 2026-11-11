@@ -1,11 +1,11 @@
-# Standalone matugen config, separate from anything DMS manages.
+# Standalone matugen config, separate from anything Dux Shell manages.
 
 [config]
 
-# DankMaterialShell
+# Dux Shell
 [templates.dms]
 input_path = '~/dotfiles/matugen/templates/dms-theme.json'
-output_path = '~/dotfiles/dms/themes/dynamic_black.json'
+output_path = '~/dotfiles/dux/themes/dynamic_black.json'
 
 # Obsidian
 [templates.obsidian]

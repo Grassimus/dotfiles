@@ -1,6 +1,6 @@
 [Unit]
 Description=Regenerate the custom matugen theme on wallpaper change
-# DMS is started from hypr/conf/autostart.lua, not from dms.service, so there is nothing meaningful to order against beyond the session itself.
+# Dux Shell is started from hypr/conf/autostart.lua, not from dms.service, so there is nothing meaningful to order against beyond the session itself.
 After=graphical-session.target
 PartOf=graphical-session.target
 

@@ -3,9 +3,9 @@ local function gh(repo) return 'https://github.com/' .. repo end
 -- [[ Colorscheme ]]
 -- base46 is NvChad's theme engine as a standalone plugin. Its DMS integration
 -- ships a matugen template that writes `colors/dms.lua`, so the Neovim theme
--- tracks the DankMaterialShell palette and hot-reloads when the wallpaper,
+-- tracks the Dux Shell palette and hot-reloads when the wallpaper,
 -- source color or light/dark mode changes.
-vim.pack.add { gh 'AvengeMedia/base46' }
+vim.pack.add { gh 'duxlabs-dev/base46' }
 
 require('base46').setup {
   transparency = true,
