@@ -21,3 +21,9 @@ output_path = '~/dotfiles/unlayered-slicer/themes/Matugen.json'
 [templates.kicad]
 input_path = '~/dotfiles/matugen/templates/kicad.json'
 output_path = '~/dotfiles/kicad/colors/Matugen.json'
+
+# COSMIC (Cosmic Files and other libcosmic apps)
+[templates.cosmic]
+input_path = '~/dotfiles/matugen/templates/cosmic-theme.ron'
+output_path = '~/dotfiles/cosmic/theme.ron'
+post_hook = '~/dotfiles/scripts/cosmic-theme-apply.sh'

@@ -1,0 +1,366 @@
+// COSMIC (libcosmic) dark theme, read by Cosmic Files and other libcosmic apps.
+//
+// libcosmic stores its theme as one RON file per top-level field in
+// ~/.config/cosmic/com.system76.CosmicTheme.Dark/v2/. matugen can only write a
+// single file per template, so each field lives in its own "@@ <field>"
+// section and scripts/cosmic-theme-apply.sh splits them apart (post_hook).
+//
+// Colors are "#RRGGBBAA". The window background is ~79% opaque (alpha c9).
+// Layers on top of it (secondary panels, component bases, buttons, input
+// backgrounds) are 20% opaque (33; disabled 1a, small widgets 0d). Things
+// that need to stand out are stronger: the side panel (primary.base) and the
+// Cosmic Files item hover (background.component.base) are 50% (80), hover
+// states 50% (80), pressed / selected states 60% (99). Selected items use
+// the accent component, styled like the sidebar's selection: a 30% neutral
+// (outline) tint with primary-colored text. The sidebar's own selection is
+// palette.neutral_5 at a fixed 20% (set by libcosmic), so neutral_5 is the
+// lighter outline tone for definition.
+//
+// Cosmic Files requests compositor blur (ext-background-effect, which
+// Hyprland supports), so libcosmic runs in "transparent" mode: menus and
+// popups take their background from transparent_background.component.base,
+// while the file hover reads the opaque background.component.base. That's
+// the one place the two sets differ: the context menu is a dark 88% (e0),
+// with Hyprland blurring behind it.
+//
+// accent_button (suggested actions, e.g. Save in the file picker) keeps its
+// translucent primary fill but uses the regular text color (on_surface),
+// since on_primary is too close to the tinted fill. Text, icons,
+// borders, dividers and focus rings stay fully opaque. Both the opaque and
+// transparent_* containers get the
+// alpha, since libcosmic only uses transparent_* when compositor blur is
+// negotiated.
+//
+// Fields left out (success, warning, spacing, radii,
+// ...) fall back to libcosmic's built-in dark defaults.
+//
+// Mirrors the DMS "Dynamic Black" look: pure black window background, with
+// Material surface tones for the elevated layers.
+
+@@ name
+"Matugen"
+
+@@ is_dark
+true
+
+@@ frosted_windows
+true
+
+@@ frosted_maximized_apps
+true
+
+@@ accent_text
+Some("#adc6ffff")
+
+@@ background
+(
+    base: "#000000c9",
+    component: (
+        base: "#282a2f80",
+        hover: "#33353a80",
+        pressed: "#33353a99",
+        selected: "#33353a99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#1a1b201a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ transparent_background
+(
+    base: "#000000c9",
+    component: (
+        base: "#0c0e13e0",
+        hover: "#33353a80",
+        pressed: "#33353a99",
+        selected: "#33353a99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#1a1b201a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ primary
+(
+    base: "#1a1b2080",
+    component: (
+        base: "#1e1f2533",
+        hover: "#282a2f80",
+        pressed: "#33353a99",
+        selected: "#282a2f99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#1e1f251a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ transparent_primary
+(
+    base: "#1a1b2080",
+    component: (
+        base: "#1e1f2533",
+        hover: "#282a2f80",
+        pressed: "#33353a99",
+        selected: "#282a2f99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#1e1f251a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ secondary
+(
+    base: "#1e1f2533",
+    component: (
+        base: "#282a2f33",
+        hover: "#33353a80",
+        pressed: "#44474f99",
+        selected: "#33353a99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#282a2f1a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ transparent_secondary
+(
+    base: "#1e1f2533",
+    component: (
+        base: "#282a2f33",
+        hover: "#33353a80",
+        pressed: "#44474f99",
+        selected: "#33353a99",
+        selected_text: "#adc6ffff",
+        focus: "#adc6ffff",
+        divider: "#44474fff",
+        on: "#e2e2e9ff",
+        disabled: "#282a2f1a",
+        on_disabled: "#e2e2e980",
+        border: "#44474fff",
+        disabled_border: "#44474f80",
+    ),
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    small_widget: "#33353a0d",
+)
+
+@@ button
+(
+    base: "#282a2f33",
+    hover: "#33353a80",
+    pressed: "#44474f99",
+    selected: "#33353a99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    disabled: "#282a2f1a",
+    on_disabled: "#e2e2e980",
+    border: "#44474fff",
+    disabled_border: "#44474f80",
+)
+
+@@ accent
+(
+    base: "#8e90994d",
+    hover: "#8e909966",
+    pressed: "#8e909980",
+    selected: "#8e909966",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#adc6ffff",
+    on: "#adc6ffff",
+    disabled: "#8e909926",
+    on_disabled: "#adc6ff80",
+    border: "#adc6ffff",
+    disabled_border: "#adc6ff80",
+)
+
+@@ accent_button
+(
+    base: "#adc6ff33",
+    hover: "#ccdbff80",
+    pressed: "#8eb1ff99",
+    selected: "#ccdbff99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#e2e2e9ff",
+    on: "#e2e2e9ff",
+    disabled: "#adc6ff1a",
+    on_disabled: "#e2e2e980",
+    border: "#adc6ffff",
+    disabled_border: "#adc6ff80",
+)
+
+@@ destructive
+(
+    base: "#ffb4ab33",
+    hover: "#ffcfca80",
+    pressed: "#ff998c99",
+    selected: "#ffcfca99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#690005ff",
+    on: "#690005ff",
+    disabled: "#ffb4ab1a",
+    on_disabled: "#69000580",
+    border: "#ffb4abff",
+    disabled_border: "#ffb4ab80",
+)
+
+@@ destructive_button
+(
+    base: "#ffb4ab33",
+    hover: "#ffcfca80",
+    pressed: "#ff998c99",
+    selected: "#ffcfca99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#690005ff",
+    on: "#690005ff",
+    disabled: "#ffb4ab1a",
+    on_disabled: "#69000580",
+    border: "#ffb4abff",
+    disabled_border: "#ffb4ab80",
+)
+
+@@ icon_button
+(
+    base: "#00000000",
+    hover: "#282a2f80",
+    pressed: "#33353a99",
+    selected: "#282a2f99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#44474fff",
+    on: "#c4c6d0ff",
+    disabled: "#00000000",
+    on_disabled: "#c4c6d080",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ list_button
+(
+    base: "#00000000",
+    hover: "#00000000",
+    pressed: "#33353a99",
+    selected: "#282a2f99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#44474fff",
+    on: "#e2e2e9ff",
+    disabled: "#00000000",
+    on_disabled: "#e2e2e980",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ text_button
+(
+    base: "#00000000",
+    hover: "#282a2f80",
+    pressed: "#33353a99",
+    selected: "#282a2f99",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#44474fff",
+    on: "#adc6ffff",
+    disabled: "#00000000",
+    on_disabled: "#adc6ff80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ link_button
+(
+    base: "#00000000",
+    hover: "#00000000",
+    pressed: "#00000000",
+    selected: "#00000000",
+    selected_text: "#adc6ffff",
+    focus: "#adc6ffff",
+    divider: "#44474fff",
+    on: "#adc6ffff",
+    disabled: "#00000000",
+    on_disabled: "#adc6ff80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ palette
+(
+    name: "Matugen",
+    bright_red: "#ffb4abff",
+    bright_green: "#5EDB8CFF",
+    bright_orange: "#FFA37DFF",
+    gray_1: "#1a1b2033",
+    gray_2: "#1e1f2533",
+    neutral_0: "#00000033",
+    neutral_1: "#0c0e1333",
+    neutral_2: "#1a1b2033",
+    neutral_3: "#1e1f2533",
+    neutral_4: "#282a2f33",
+    neutral_5: "#8e909933",
+    neutral_6: "#44474fff",
+    neutral_7: "#8e9099ff",
+    neutral_8: "#c4c6d0ff",
+    neutral_9: "#e2e2e9ff",
+    neutral_10: "#ffffffff",
+    accent_blue: "#63D0DFFF",
+    accent_indigo: "#A1C0EBFF",
+    accent_purple: "#E79CFEFF",
+    accent_pink: "#FF9CB1FF",
+    accent_red: "#FDA1A0FF",
+    accent_orange: "#FFAD00FF",
+    accent_yellow: "#F7E062FF",
+    accent_green: "#92CF9CFF",
+    accent_warm_grey: "#CABAB4FF",
+    ext_warm_grey: "#9B8E8AFF",
+    ext_orange: "#FFAD00FF",
+    ext_yellow: "#FEDB40FF",
+    ext_blue: "#48B9C7FF",
+    ext_purple: "#CF7DFFFF",
+    ext_pink: "#F93A83FF",
+    ext_indigo: "#3E88FFFF",
+)

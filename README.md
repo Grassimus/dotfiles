@@ -146,7 +146,12 @@ No symlink needed: matugen renders `cosmic/theme.ron`, and its `post_hook`
 (`scripts/cosmic-theme-apply.sh`) splits it into the one-file-per-field layout
 libcosmic reads from `~/.config/cosmic/com.system76.CosmicTheme.Dark/v2/`.
 Fields not in the template (spacing, corner radii, success/warning colors)
-keep libcosmic's dark defaults. Requires a libcosmic with hex color support
+keep libcosmic's dark defaults.
+
+Outside COSMIC there's no `cosmic-settings-daemon`, which libcosmic needs for
+live theme reloads, so running libcosmic apps keep the theme they started
+with. The hook therefore also stops `xdg-desktop-portal-cosmic` (the file
+picker), which D-Bus restarts with the new theme on the next file dialog. Requires a libcosmic with hex color support
 (Cosmic Files ≥ 1.11 builds from mid-2026 on).
 
 ### Obsidian (`obsidian/`)

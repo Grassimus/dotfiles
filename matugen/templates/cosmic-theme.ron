@@ -1,0 +1,366 @@
+// COSMIC (libcosmic) dark theme, read by Cosmic Files and other libcosmic apps.
+//
+// libcosmic stores its theme as one RON file per top-level field in
+// ~/.config/cosmic/com.system76.CosmicTheme.Dark/v2/. matugen can only write a
+// single file per template, so each field lives in its own "@@ <field>"
+// section and scripts/cosmic-theme-apply.sh splits them apart (post_hook).
+//
+// Colors are "#RRGGBBAA". The window background is ~79% opaque (alpha c9).
+// Layers on top of it (secondary panels, component bases, buttons, input
+// backgrounds) are 20% opaque (33; disabled 1a, small widgets 0d). Things
+// that need to stand out are stronger: the side panel (primary.base) and the
+// Cosmic Files item hover (background.component.base) are 50% (80), hover
+// states 50% (80), pressed / selected states 60% (99). Selected items use
+// the accent component, styled like the sidebar's selection: a 30% neutral
+// (outline) tint with primary-colored text. The sidebar's own selection is
+// palette.neutral_5 at a fixed 20% (set by libcosmic), so neutral_5 is the
+// lighter outline tone for definition.
+//
+// Cosmic Files requests compositor blur (ext-background-effect, which
+// Hyprland supports), so libcosmic runs in "transparent" mode: menus and
+// popups take their background from transparent_background.component.base,
+// while the file hover reads the opaque background.component.base. That's
+// the one place the two sets differ: the context menu is a dark 88% (e0),
+// with Hyprland blurring behind it.
+//
+// accent_button (suggested actions, e.g. Save in the file picker) keeps its
+// translucent primary fill but uses the regular text color (on_surface),
+// since on_primary is too close to the tinted fill. Text, icons,
+// borders, dividers and focus rings stay fully opaque. Both the opaque and
+// transparent_* containers get the
+// alpha, since libcosmic only uses transparent_* when compositor blur is
+// negotiated.
+//
+// Fields left out (success, warning, spacing, radii,
+// ...) fall back to libcosmic's built-in dark defaults.
+//
+// Mirrors the DMS "Dynamic Black" look: pure black window background, with
+// Material surface tones for the elevated layers.
+
+@@ name
+"Matugen"
+
+@@ is_dark
+true
+
+@@ frosted_windows
+true
+
+@@ frosted_maximized_apps
+true
+
+@@ accent_text
+Some("{{ colors.primary.default.hex }}ff")
+
+@@ background
+(
+    base: "#000000c9",
+    component: (
+        base: "{{ colors.surface_container_high.default.hex }}80",
+        hover: "{{ colors.surface_container_highest.default.hex }}80",
+        pressed: "{{ colors.surface_container_highest.default.hex }}99",
+        selected: "{{ colors.surface_container_highest.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container_low.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ transparent_background
+(
+    base: "#000000c9",
+    component: (
+        base: "{{ colors.surface_container_lowest.default.hex }}e0",
+        hover: "{{ colors.surface_container_highest.default.hex }}80",
+        pressed: "{{ colors.surface_container_highest.default.hex }}99",
+        selected: "{{ colors.surface_container_highest.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container_low.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ primary
+(
+    base: "{{ colors.surface_container_low.default.hex }}80",
+    component: (
+        base: "{{ colors.surface_container.default.hex }}33",
+        hover: "{{ colors.surface_container_high.default.hex }}80",
+        pressed: "{{ colors.surface_container_highest.default.hex }}99",
+        selected: "{{ colors.surface_container_high.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ transparent_primary
+(
+    base: "{{ colors.surface_container_low.default.hex }}80",
+    component: (
+        base: "{{ colors.surface_container.default.hex }}33",
+        hover: "{{ colors.surface_container_high.default.hex }}80",
+        pressed: "{{ colors.surface_container_highest.default.hex }}99",
+        selected: "{{ colors.surface_container_high.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ secondary
+(
+    base: "{{ colors.surface_container.default.hex }}33",
+    component: (
+        base: "{{ colors.surface_container_high.default.hex }}33",
+        hover: "{{ colors.surface_container_highest.default.hex }}80",
+        pressed: "{{ colors.outline_variant.default.hex }}99",
+        selected: "{{ colors.surface_container_highest.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container_high.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ transparent_secondary
+(
+    base: "{{ colors.surface_container.default.hex }}33",
+    component: (
+        base: "{{ colors.surface_container_high.default.hex }}33",
+        hover: "{{ colors.surface_container_highest.default.hex }}80",
+        pressed: "{{ colors.outline_variant.default.hex }}99",
+        selected: "{{ colors.surface_container_highest.default.hex }}99",
+        selected_text: "{{ colors.primary.default.hex }}ff",
+        focus: "{{ colors.primary.default.hex }}ff",
+        divider: "{{ colors.outline_variant.default.hex }}ff",
+        on: "{{ colors.on_surface.default.hex }}ff",
+        disabled: "{{ colors.surface_container_high.default.hex }}1a",
+        on_disabled: "{{ colors.on_surface.default.hex }}80",
+        border: "{{ colors.outline_variant.default.hex }}ff",
+        disabled_border: "{{ colors.outline_variant.default.hex }}80",
+    ),
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    small_widget: "{{ colors.surface_container_highest.default.hex }}0d",
+)
+
+@@ button
+(
+    base: "{{ colors.surface_container_high.default.hex }}33",
+    hover: "{{ colors.surface_container_highest.default.hex }}80",
+    pressed: "{{ colors.outline_variant.default.hex }}99",
+    selected: "{{ colors.surface_container_highest.default.hex }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    disabled: "{{ colors.surface_container_high.default.hex }}1a",
+    on_disabled: "{{ colors.on_surface.default.hex }}80",
+    border: "{{ colors.outline_variant.default.hex }}ff",
+    disabled_border: "{{ colors.outline_variant.default.hex }}80",
+)
+
+@@ accent
+(
+    base: "{{ colors.outline.default.hex }}4d",
+    hover: "{{ colors.outline.default.hex }}66",
+    pressed: "{{ colors.outline.default.hex }}80",
+    selected: "{{ colors.outline.default.hex }}66",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.primary.default.hex }}ff",
+    on: "{{ colors.primary.default.hex }}ff",
+    disabled: "{{ colors.outline.default.hex }}26",
+    on_disabled: "{{ colors.primary.default.hex }}80",
+    border: "{{ colors.primary.default.hex }}ff",
+    disabled_border: "{{ colors.primary.default.hex }}80",
+)
+
+@@ accent_button
+(
+    base: "{{ colors.primary.default.hex }}33",
+    hover: "{{ colors.primary.default.hex | lighten: 6.0 }}80",
+    pressed: "{{ colors.primary.default.hex | lighten: -6.0 }}99",
+    selected: "{{ colors.primary.default.hex | lighten: 6.0 }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.on_surface.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    disabled: "{{ colors.primary.default.hex }}1a",
+    on_disabled: "{{ colors.on_surface.default.hex }}80",
+    border: "{{ colors.primary.default.hex }}ff",
+    disabled_border: "{{ colors.primary.default.hex }}80",
+)
+
+@@ destructive
+(
+    base: "{{ colors.error.default.hex }}33",
+    hover: "{{ colors.error.default.hex | lighten: 6.0 }}80",
+    pressed: "{{ colors.error.default.hex | lighten: -6.0 }}99",
+    selected: "{{ colors.error.default.hex | lighten: 6.0 }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.on_error.default.hex }}ff",
+    on: "{{ colors.on_error.default.hex }}ff",
+    disabled: "{{ colors.error.default.hex }}1a",
+    on_disabled: "{{ colors.on_error.default.hex }}80",
+    border: "{{ colors.error.default.hex }}ff",
+    disabled_border: "{{ colors.error.default.hex }}80",
+)
+
+@@ destructive_button
+(
+    base: "{{ colors.error.default.hex }}33",
+    hover: "{{ colors.error.default.hex | lighten: 6.0 }}80",
+    pressed: "{{ colors.error.default.hex | lighten: -6.0 }}99",
+    selected: "{{ colors.error.default.hex | lighten: 6.0 }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.on_error.default.hex }}ff",
+    on: "{{ colors.on_error.default.hex }}ff",
+    disabled: "{{ colors.error.default.hex }}1a",
+    on_disabled: "{{ colors.on_error.default.hex }}80",
+    border: "{{ colors.error.default.hex }}ff",
+    disabled_border: "{{ colors.error.default.hex }}80",
+)
+
+@@ icon_button
+(
+    base: "#00000000",
+    hover: "{{ colors.surface_container_high.default.hex }}80",
+    pressed: "{{ colors.surface_container_highest.default.hex }}99",
+    selected: "{{ colors.surface_container_high.default.hex }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface_variant.default.hex }}ff",
+    disabled: "#00000000",
+    on_disabled: "{{ colors.on_surface_variant.default.hex }}80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ list_button
+(
+    base: "#00000000",
+    hover: "#00000000",
+    pressed: "{{ colors.surface_container_highest.default.hex }}99",
+    selected: "{{ colors.surface_container_high.default.hex }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.on_surface.default.hex }}ff",
+    disabled: "#00000000",
+    on_disabled: "{{ colors.on_surface.default.hex }}80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ text_button
+(
+    base: "#00000000",
+    hover: "{{ colors.surface_container_high.default.hex }}80",
+    pressed: "{{ colors.surface_container_highest.default.hex }}99",
+    selected: "{{ colors.surface_container_high.default.hex }}99",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.primary.default.hex }}ff",
+    disabled: "#00000000",
+    on_disabled: "{{ colors.primary.default.hex }}80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ link_button
+(
+    base: "#00000000",
+    hover: "#00000000",
+    pressed: "#00000000",
+    selected: "#00000000",
+    selected_text: "{{ colors.primary.default.hex }}ff",
+    focus: "{{ colors.primary.default.hex }}ff",
+    divider: "{{ colors.outline_variant.default.hex }}ff",
+    on: "{{ colors.primary.default.hex }}ff",
+    disabled: "#00000000",
+    on_disabled: "{{ colors.primary.default.hex }}80",
+    border: "#00000000",
+    disabled_border: "#00000000",
+)
+
+@@ palette
+(
+    name: "Matugen",
+    bright_red: "{{ colors.error.default.hex }}ff",
+    bright_green: "#5EDB8CFF",
+    bright_orange: "#FFA37DFF",
+    gray_1: "{{ colors.surface_container_low.default.hex }}33",
+    gray_2: "{{ colors.surface_container.default.hex }}33",
+    neutral_0: "#00000033",
+    neutral_1: "{{ colors.surface_container_lowest.default.hex }}33",
+    neutral_2: "{{ colors.surface_container_low.default.hex }}33",
+    neutral_3: "{{ colors.surface_container.default.hex }}33",
+    neutral_4: "{{ colors.surface_container_high.default.hex }}33",
+    neutral_5: "{{ colors.outline.default.hex }}33",
+    neutral_6: "{{ colors.outline_variant.default.hex }}ff",
+    neutral_7: "{{ colors.outline.default.hex }}ff",
+    neutral_8: "{{ colors.on_surface_variant.default.hex }}ff",
+    neutral_9: "{{ colors.on_surface.default.hex }}ff",
+    neutral_10: "#ffffffff",
+    accent_blue: "#63D0DFFF",
+    accent_indigo: "#A1C0EBFF",
+    accent_purple: "#E79CFEFF",
+    accent_pink: "#FF9CB1FF",
+    accent_red: "#FDA1A0FF",
+    accent_orange: "#FFAD00FF",
+    accent_yellow: "#F7E062FF",
+    accent_green: "#92CF9CFF",
+    accent_warm_grey: "#CABAB4FF",
+    ext_warm_grey: "#9B8E8AFF",
+    ext_orange: "#FFAD00FF",
+    ext_yellow: "#FEDB40FF",
+    ext_blue: "#48B9C7FF",
+    ext_purple: "#CF7DFFFF",
+    ext_pink: "#F93A83FF",
+    ext_indigo: "#3E88FFFF",
+)
